@@ -1,12 +1,19 @@
 import React from 'react'
-import './Task.css'
 
 class Tasks extends React.Component {
+	styleComplete(done) {
+		return {
+			fontSize: '20px',
+			color: done ? 'gray' : 'black',
+			textDecoration: done ? 'line-through' : 'none',
+		}
+	}
+
 	render() {
 		const task = this.props.task
 
 		return (
-			<p className="red">
+			<p style={ this.styleComplete(task.done) }>
 				{task.id} - {task.title} - {task.description}
 				<input type="checkbox" />
 				<button style={btnDelete}>

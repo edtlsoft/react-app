@@ -12,7 +12,7 @@ const tasks = [{
 	id: 3,
 	title: 'Learn ReactNative',
 	description: 'Learn ReactNative on two months',
-	done: false,
+	done: true,
 }]
 
 export default tasks
