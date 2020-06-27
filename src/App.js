@@ -1,16 +1,14 @@
 import React from 'react';
 import './App.css';
+import Tasks from './components/Tasks'
+import tasks from './data/Tasks'
 
-import HelloWorld from './HelloWorld';
-
+console.log(tasks)
 
 function App() {
   return (
     <div className="App">
-      This is my component
-      <HelloWorld texto="Hello World!" />
-      <HelloWorld texto="Hello Continent!" />
-      <HelloWorld texto="Hello Country!" />
+      <Tasks tasks={tasks} />
     </div>
   );
 }
