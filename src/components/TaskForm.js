@@ -4,12 +4,11 @@ export default class TaskForm extends React.Component {
 	state = {
 		title: '',
 		description: '',
-		done: false,
 	}
 
 	submitTask = e => {
 		e.preventDefault()
-		console.log('Enviando...', this.state)
+		this.props.addTask(this.state.title, this.state.description)
 	}
 
 	change = e => {
