@@ -6,7 +6,9 @@ class Tasks extends React.Component {
 	render() {
 		return (
 			<div>
-				{ this.props.tasks.map(task => <Task task={task} key={task.id} />) }
+				<ul className="list-group">
+					{ this.props.tasks.map(task => <Task task={task} key={task.id} />) }
+				</ul>
 			</div>
 		)
 	}
