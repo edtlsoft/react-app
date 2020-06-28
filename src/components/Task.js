@@ -3,6 +3,8 @@ import PropTypes from 'prop-types'
 
 class Task extends React.Component {
 	styleComplete(done) {
+		console.log('styleComplete', done)
+
 		return {
 			display: 'flex',
 			justifyContent: 'space-between',
@@ -12,7 +14,10 @@ class Task extends React.Component {
 		}
 	}
 
+	checkedTask = () => true
+
 	render() {
+		console.log(this.props)
 		const task = this.props.task
 
 		return (
@@ -21,8 +26,14 @@ class Task extends React.Component {
 					{task.id} - {task.title} - {task.description}
 				</div>
 				<div>
-					<input type="checkbox" checked={task.done} style={inputCheck} />
-					<button style={btnDelete}>X</button>
+					<input
+						type="checkbox"
+						style={inputCheck}
+						checked={task.done}
+						onChange={this.checkedTask} />
+					<button style={btnDelete} onClick={this.props.deleteTask.bind(this, task.id)}>
+						X
+					</button>
 				</div>
 			</li>
 		)

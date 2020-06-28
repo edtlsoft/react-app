@@ -25,12 +25,18 @@ export default class App extends React.Component {
 		})
 	}
 
+	deleteTask = (id) => {
+		this.setState({
+			tasks: this.state.tasks.filter(task => task.id !== id)
+		})
+	}
+
 	render() {
 		return (
 			<div className="App container">
 				<TaskForm addTask={this.addTask} />
 
-				<Tasks tasks={this.state.tasks} />
+				<Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} />
 			</div>
 		)
 	}
