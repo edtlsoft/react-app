@@ -1,6 +1,7 @@
 import React from 'react'
+import PropTypes from 'prop-types'
 
-class Tasks extends React.Component {
+class Task extends React.Component {
 	styleComplete(done) {
 		return {
 			fontSize: '20px',
@@ -24,6 +25,10 @@ class Tasks extends React.Component {
 	}
 }
 
+Task.propTypes = {
+	task: PropTypes.object.isRequired
+}
+
 const btnDelete = {
 	fontSize: '18px',
 	background: '#ea2027',
@@ -34,4 +39,4 @@ const btnDelete = {
 	cursor: 'pointer',
 }
 
-export default Tasks
+export default Task
