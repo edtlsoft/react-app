@@ -3,6 +3,7 @@ import './App.css';
 
 import Tasks from './components/Tasks'
 import TaskForm from './components/TaskForm'
+import Posts from './components/Posts'
 
 import tasks from './data/Tasks'
 
@@ -51,6 +52,8 @@ export default class App extends React.Component {
 					tasks={this.state.tasks}
 					checkDone={this.checkDone}
 					deleteTask={this.deleteTask} />
+
+				<Posts />
 			</div>
 		)
 	}
