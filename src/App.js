@@ -31,12 +31,26 @@ export default class App extends React.Component {
 		})
 	}
 
+	checkDone = (id) => {
+		this.setState({
+			tasks: this.state.tasks.map(task =>  {
+				if( task.id === id )
+					task.done = !task.done;
+
+				return task;
+			})
+		})
+	}
+
 	render() {
 		return (
 			<div className="App container">
 				<TaskForm addTask={this.addTask} />
 
-				<Tasks tasks={this.state.tasks} deleteTask={this.deleteTask} />
+				<Tasks
+					tasks={this.state.tasks}
+					checkDone={this.checkDone}
+					deleteTask={this.deleteTask} />
 			</div>
 		)
 	}

@@ -11,6 +11,7 @@ class Tasks extends React.Component {
 						<Task
 							task={task}
 							key={task.id}
+							checkDone={this.props.checkDone}
 							deleteTask={this.props.deleteTask} />
 					) }
 				</ul>
